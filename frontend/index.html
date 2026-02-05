@@ -14,6 +14,12 @@
     <textarea id="description" placeholder="Task description"></textarea>
     <button onclick="addTask()">Add Task</button>
   </div>
+  <div class="filters">
+  <button onclick="setFilter('All')">All</button>
+  <button onclick="setFilter('Pending')">Pending</button>
+  <button onclick="setFilter('Completed')">Completed</button>
+  </div>
+
 
   <ul id="taskList"></ul>
 

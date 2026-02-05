@@ -1,84 +1,115 @@
-# Simple Task Management Application
+Task Management Application
 
-## Overview
+A simple full-stack web application to manage tasks.
+Users can create tasks, view them, update their status, filter by status, and delete tasks.
 
-This is a basic full-stack task management application that allows users to create, view, update, and delete tasks.
-The project is intentionally kept minimal to demonstrate core full-stack concepts such as REST APIs, frontend–backend communication, and basic validation.
+This project was built as part of a technical assessment with a focus on clean architecture, RESTful APIs, and clarity over over-engineering.
 
----
+Tech Stack
+Frontend
 
-## Tech Stack
+HTML
 
-* **Frontend:** HTML, CSS, Vanilla JavaScript
-* **Backend:** Node.js, Express
-* **Database:** In-memory JavaScript array (no persistent database)
+CSS
 
----
+JavaScript (Fetch API)
 
-## Features
+Backend
 
-* Add a task with title and description
-* View all tasks
-* Mark a task as completed
-* Delete a task
-* Basic input validation (task title required)
+Node.js
 
----
+Express.js
 
-## How to Run Locally
+Data Storage
 
-### Backend
+JSON file (tasks.json) for persistence
 
-```bash
+Features
+Core Features
+
+Add a task (title & description)
+
+View all tasks
+
+Toggle task status (Pending ↔ Completed)
+
+Delete a task
+
+Basic validation (task title required)
+
+Bonus Features
+
+Filter tasks by status (All / Pending / Completed)
+
+Persistent storage using JSON file
+
+Clean and minimal UI
+
+API Endpoints
+Method	Endpoint	Description
+GET	/tasks	Fetch all tasks
+POST	/tasks	Add a new task
+PUT	/tasks/:id/toggle	Toggle task status
+DELETE	/tasks/:id	Delete a task
+Project Structure
+task-manager/
+├── backend/
+│   ├── controllers/
+│   │   └── tasksController.js
+│   ├── routes/
+│   │   └── tasks.js
+│   ├── tasks.json
+│   ├── app.js
+│   └── server.js
+├── frontend/
+│   ├── index.html
+│   ├── style.css
+│   └── script.js
+└── README.md
+
+How to Run Locally
+Backend
 cd backend
 npm install
-npm start
-```
+node server.js
 
-Server will run on:
 
-```
+Server runs on:
+
 http://localhost:5000
-```
 
-### Frontend
+Frontend
 
-Open the following file directly in the browser:
+Open the following file in browser:
 
-```
 frontend/index.html
-```
-
-Make sure the backend server is running before using the frontend.
-
----
-
-## API Endpoints
-
-* `GET /tasks` – Fetch all tasks
-* `POST /tasks` – Add a new task
-* `PUT /tasks/:id` – Mark a task as completed
-* `DELETE /tasks/:id` – Delete a task
-
----
-
-## Assumptions & Limitations
-
-* Tasks are stored in memory and will reset when the server restarts
-* No authentication or user management
-* Designed for single-user usage
-* Minimal UI by design
-
----
-
-## Bonus Features
-
-* Task deletion support
-
----
-
-## Notes
-
-This project focuses on clarity, simplicity, and demonstrating fundamental full-stack development flow rather than advanced UI or production-level features.
 
 
+Make sure the backend server is running.
+
+Assumptions & Limitations
+
+Single-user application
+
+No authentication or authorization
+
+JSON file used instead of a database for simplicity
+
+Data is persisted locally but not suitable for concurrent users
+
+Future Improvements
+
+Replace JSON storage with a database (MongoDB / PostgreSQL)
+
+Add user authentication
+
+Pagination for large task lists
+
+Deployment using Docker
+
+Live Demo
+
+Not deployed
+
+Author
+Built by Mohit Kaushik
